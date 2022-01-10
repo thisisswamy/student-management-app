@@ -1,0 +1,25 @@
+.block-1{
+    margin-top: 10px;
+    align-items: center;
+    justify-content:center;
+    max-width: 490px;  
+
+}
+.container{
+    font-family:Arial, Helvetica, sans-serif;
+}
+h1{
+    color:brown;
+}
+form{
+    margin:20px;
+}
+button{
+    width: 100%;
+}
+input.ng-invalid.ng-touched{
+    border: 1.5px solid red;
+}
+input.ng-valid.ng-touched{
+ border: 1.5px solid rgb(5, 139, 5);
+}

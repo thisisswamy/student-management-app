@@ -1,0 +1,59 @@
+.container{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.card{
+    margin-top: 20px;
+    
+}
+.block-1{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;    
+}
+form{
+    margin: 20px;
+    
+}
+button{
+    width: 100%;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    padding-left: 10px;
+    font-weight: bold;
+}
+hr{
+    margin: 10px;
+}
+a{
+    text-decoration: none;
+    font-size: small;
+    padding-top: 10px;
+    
+}
+a:hover{
+    color:red;
+}
+.block-2{
+    display: flex;
+    justify-content: space-between;
+}
+h2{
+    text-align: center;
+}
+h4{
+    
+    font-size:medium ;
+}
+input.ng-invalid.ng-touched{
+    border: 1.5px solid red;
+}
+input.ng-valid.ng-touched{
+ border: 1.5px solid rgb(5, 139, 5);
+}
+@media (max-width: 990px){
+    .block-1{
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="container block-1">
+
+        <div *ngIf='checkErrorStatus' class="mt-2 alert alert-danger" role="alert">
+          {{errorMessege}}
+        </div>
+        <div class="card">
+            <h1>Login</h1><hr>
+            <form [formGroup]='loginDetails' (ngSubmit)="onLogin(loginDetails)">
+                <div class="form-group">
+                    <label for=""> User name</label>
+                    <input type="text" class="form-control" formControlName='username'>
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control" formControlName='password' password>
+                </div>
+                <div class="container">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="block-2">
+                    <a routerLink="/create">Create Account</a>
+                    <a routerLink="/forgot">forgot password</a>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>

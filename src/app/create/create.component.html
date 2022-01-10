@@ -1,0 +1,80 @@
+<div class="container">
+    <h1>Create Account</h1><hr>
+    <div class="container block-1">
+        <div>     
+            <div class="container">
+                <div class="conatiner">
+                    <button class=" btn btn-outline-danger"> Sign with Google</button>
+                    <button class=" btn btn-outline-dark"> Sign with GitHub</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2> or</h2>
+        </div>
+        <div >
+                <h4> Fill details :</h4>
+            <div class="card">
+                <form #studentData="ngForm" (ngSubmit)="onSubmitForm(studentData.value); studentData.resetForm()"> 
+                    <div class="row">
+                    <div class="col">
+                        <label for="First Name"> First Name</label>
+                        <input  #firstname='ngModel' type="text" class="form-control"  minlength="3" placeholder="First name" required name="firstname" [(ngModel)]='stdModel.firstName'>
+                        <div *ngIf="firstname.errors && (firstname.invalid || firstname.touched)" >
+                            <small class="text-danger" *ngIf="firstname.errors.required && firstname.touched">Required* </small>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="Last Name">Last Name</label>
+                        <input #lastname='ngModel' type="text" class="form-control" placeholder="Last name" required name="lastname" [(ngModel)]='stdModel.lastName'>
+                        <div *ngIf="lastname.errors && (lastname.invalid || lastname.touched)" >
+                            <small class="text-danger" *ngIf="lastname.errors.required && lastname.touched">Required* </small>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">E-mail</label>
+                        <input #email='ngModel' type="text" class="form-control" placeholder="Email address" pattern ="^[a-z0-9._%+-]+@[(gmail)||(tcs).]+\.[(com)]{2,4}$"
+                        required name="email" [(ngModel)]='stdModel.email'>
+                        <div *ngIf="email.errors && (email.invalid || email.touched)">
+                            <small class="text-danger" *ngIf="email.errors.required && email.touched"> Required* </small>
+                            <small class="text-danger" *ngIf="email.errors.pattern"> enter valid email address ends with @gmail/tcs.com</small>
+                        </div>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="Password">Password</label>
+                        <input  #password='ngModel' type="text" class="form-control" placeholder="Password" required name="password" pattern ="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$"
+                        minlength="6" 
+                        [(ngModel)]='stdModel.password'>
+                        <div *ngIf="password.errors && (password.invalid || password.touched)" style="background-color:azure;margin-top:5px;" >
+                            <small class="text-danger" *ngIf="password.errors.required && password.touched">Required* </small>
+                            <small class="text-danger" *ngIf="password.errors.pattern">
+                                <ul>
+                                    <li>Password should be 6 character length</li>
+                                    <li>First letter should be Uppercase letter</li>
+                                    <li>should contain atleast a number</li>
+                                    <li>should contain one special character @#$%&</li>
+                               </ul>
+                           </small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password"> Confirm password</label>
+                        <input #confirmpassword='ngModel' type="text" class="form-control" placeholder="Confirm Password" required name="confirmPassword" [(ngModel)]='stdModel.confirmPassword' >
+                        <div *ngIf="confirmpassword.errors && (confirmpassword.invalid || confirmpassword.touched)">
+                            <small class="text-danger" *ngIf=" confirmpassword.errors.required&&confirmpassword.touched ">Required*</small>
+                        </div>
+                        <!--<div *ngIf="(confirmpassword.touched && confirmpassword.valid)">
+                            <small class="text-danger" *ngIf="stdModel.confirmPassword !== stdModel.password"> Password Mismatch</small>
+                        </div>-->
+                    </div>
+                    <div class="container">
+                        <button class=" btn btn-primary" [disabled]="!studentData.valid">Create Account</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

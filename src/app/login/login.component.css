@@ -1,0 +1,39 @@
+.card{
+    margin-top: 50px;
+    
+}
+.block-1{
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    max-width: 450px;
+}
+form{
+    margin: 20px;
+    
+}
+button{
+    width: 100%;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    padding-left: 10px;
+    font-weight: bold;
+}
+hr{
+    margin: 10px;
+}
+a{
+    text-decoration: none;
+    font-size: small;
+    padding-top: 10px;
+    
+}
+a:hover{
+    color:red;
+}
+.block-2{
+    display: flex;
+    justify-content: space-between;
+}

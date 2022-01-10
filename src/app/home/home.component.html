@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<div class="container block-1">
+    <div class="row cls">
+        <div class="col m-3 card" *ngFor="let obj of students; index as i">
+            <div class="card-header">
+               <b>User {{i+1}}</b> 
+            </div>
+            <div class="card-body" >
+                <p><b>Name :</b> {{obj.firstname}}&nbsp;{{obj.lastname}}</p>
+               <p><b>Designation :</b> {{obj.designation}}</p>
+               <p><b>Email :</b> {{obj.email}}</p>
+               <p><b>Phone number :</b>{{obj.phonenumber}}</p>
+            </div>
+            <div class="container">
+                <button class="btn btn-danger" (click)="deleteStudentByEmail(obj.email)"> delete</button>
+            </div><br>
+           
+        </div>
+        
+    </div>
+</div>
+
+
+
+  
+  
+  
+
+<!-- /.container -->
